@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="Alarm">
+
+    <select name="setHour" class="Alarm-SetHour">
+      <% for(var i=0; i<=alarm.hour;i++){ %>
+          <% if(i<10){ %>
+            <option value="0<%= i %>">0<%= i %></option>
+          <%  }else{ %>
+            <option value="<%= i %>"><%= i %></option>
+          <%  } %>
+      <%  } %>
+    </select>
+
+    <select name="setMinutes" class="Alarm-SetMinutes">
+      <% for(var i=0; i<=alarm.minutes;i++){ %>
+          <% if(i<10){ %>
+            <option value="0<%= i %>">0<%= i %></option>
+          <%  }else{ %>
+            <option value="<%= i %>"><%= i %></option>
+          <%  } %>
+      <%  } %>
+    </select>
+
+  </div>
+</body>
+</html>
