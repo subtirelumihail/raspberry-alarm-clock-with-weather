@@ -1,8 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var play = require('play');
 
 var app = express();
+
+//Include models
+var Alarm = require('./models/Alarm').setAlarm();
+
+
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -31,12 +35,13 @@ app.get('/', function(req, res) {
 
 //RestfulAPI
 app.get('/sound', function(req, res) {
-   play.sound('./public/sound/alarm.wav');
-   response.end();
+   res.end();
 });
 
 //Starting to listen...
 app.listen(app.get('port'), function() {
     console.log("Node app is running at localhost:" + app.get('port'));
 });
+
+
 
