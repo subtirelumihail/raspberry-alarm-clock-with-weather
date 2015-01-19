@@ -7,7 +7,6 @@ var app = express();
 var Alarm = require('./models/Alarm').setAlarm();
 
 
-
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
@@ -35,6 +34,7 @@ app.get('/', function(req, res) {
 
 //RestfulAPI
 app.get('/sound', function(req, res) {
+
    res.end();
 });
 
