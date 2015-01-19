@@ -1,11 +1,14 @@
+'use strict';
+
 var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
 
 //Include models
-var Alarm = require('./models/Alarm').setAlarm();
+var AlarmModule = require('./models/Alarm/app');
 
+AlarmModule.init();
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -34,13 +37,13 @@ app.get('/', function(req, res) {
 
 //RestfulAPI
 app.get('/sound', function(req, res) {
-
+   AlarmModule.setNewAlarm({hour:'17', minutes:'22'});
    res.end();
 });
 
 //Starting to listen...
 app.listen(app.get('port'), function() {
-    console.log("Node app is running at localhost:" + app.get('port'));
+    console.log('Node app is running at localhost:' + app.get('port'));
 });
 
 
