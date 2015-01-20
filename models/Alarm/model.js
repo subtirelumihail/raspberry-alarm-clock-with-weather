@@ -5,7 +5,7 @@ var AlarmSchema = new Schema({
   alarmSound: String,
   day: Number,
   hour: String,
-  minutes: String,
+  minute: String,
   repeat: Boolean,
 });
 

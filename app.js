@@ -37,7 +37,7 @@ app.get('/', function(req, res) {
 
 //RestfulAPI
 app.get('/sound', function(req, res) {
-   AlarmModule.setNewAlarm({hour:'17', minutes:'22'});
+   AlarmModule.setNewAlarm({hour:16, minute:6});
    res.end();
 });
 
